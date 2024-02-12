@@ -31,6 +31,7 @@ class HomePage extends StatelessWidget {
                   left: spacing,
                   right: spacing,
                   top: 42,
+                  bottom: 24,
                 ),
                 leftIcon: AppIconButton(
                   iconPath: 'assets/icons/ic_menu.svg',
@@ -45,7 +46,12 @@ class HomePage extends StatelessWidget {
               ),
               Expanded(
                 child: ListView.separated(
-                  padding: const EdgeInsets.all(spacing),
+                  padding: const EdgeInsets.only(
+                    left: spacing,
+                    right: spacing,
+                    top: spacing,
+                    bottom: spacing + bottomBarHeight,
+                  ),
                   itemCount: wineItems.length,
                   itemBuilder: (context, index) {
                     return SizedBox(
