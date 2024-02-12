@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ui_challenge_11/app_colors.dart';
 import 'package:ui_challenge_11/details/details_page.dart';
+import 'package:ui_challenge_11/fade_route.dart';
 import 'package:ui_challenge_11/widgets/app_icon_button.dart';
 import 'package:ui_challenge_11/wine_item.dart';
 
@@ -54,7 +55,7 @@ class HomePage extends StatelessWidget {
                         item: wineItems[index],
                         onTap: () {
                           Navigator.of(context).push(
-                            MaterialPageRoute(
+                            FadeRoute(
                               builder: (context) => DetailsPage(
                                 item: wineItems[index],
                               ),

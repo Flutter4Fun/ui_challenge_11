@@ -11,9 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
-      debugShowCheckedModeBanner: false,
+    return const Center(
+      child: AspectRatio(
+        aspectRatio: 0.4614561028,
+        child: MaterialApp(
+          home: HomePage(),
+          debugShowCheckedModeBanner: false,
+        ),
+      ),
     );
   }
 }
