@@ -19,7 +19,7 @@ class AppIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {},
+      onPressed: onPressed,
       icon: SvgPicture.asset(
         iconPath,
         colorFilter: ColorFilter.mode(

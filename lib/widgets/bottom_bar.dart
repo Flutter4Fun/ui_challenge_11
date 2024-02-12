@@ -1,4 +1,4 @@
-part of '../home_page.dart';
+part of '../home/home_page.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({

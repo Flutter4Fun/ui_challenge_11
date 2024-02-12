@@ -4,9 +4,17 @@ class TopBar extends StatelessWidget {
   const TopBar({
     super.key,
     required this.margin,
+    required this.leftIcon,
+    required this.rightIcon,
+    required this.title,
+    required this.titleColor,
   });
 
   final EdgeInsets margin;
+  final Widget leftIcon;
+  final Widget rightIcon;
+  final String title;
+  final Color titleColor;
 
   @override
   Widget build(BuildContext context) {
@@ -14,26 +22,20 @@ class TopBar extends StatelessWidget {
       padding: margin,
       child: Row(
         children: [
-          AppIconButton(
-            iconPath: 'assets/icons/ic_menu.svg',
-            onPressed: () {},
-          ),
-          const Expanded(
+          leftIcon,
+          Expanded(
             child: Center(
               child: Text(
-                'Home',
+                title,
                 style: TextStyle(
-                  color: AppColors.defaultTextColor,
+                  color: titleColor,
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
           ),
-          AppIconButton(
-            iconPath: 'assets/icons/ic_scan.svg',
-            onPressed: () {},
-          ),
+          rightIcon,
         ],
       ),
     );

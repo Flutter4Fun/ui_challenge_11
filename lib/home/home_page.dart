@@ -3,12 +3,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ui_challenge_11/app_colors.dart';
+import 'package:ui_challenge_11/details/details_page.dart';
 import 'package:ui_challenge_11/widgets/app_icon_button.dart';
 import 'package:ui_challenge_11/wine_item.dart';
 
 part 'widgets/top_bar.dart';
 
-part 'widgets/bottom_bar.dart';
+part '../widgets/bottom_bar.dart';
 
 part 'widgets/wine_row.dart';
 
@@ -24,12 +25,22 @@ class HomePage extends StatelessWidget {
         children: [
           Column(
             children: [
-              const TopBar(
-                margin: EdgeInsets.only(
+              TopBar(
+                margin: const EdgeInsets.only(
                   left: spacing,
                   right: spacing,
                   top: 42,
                 ),
+                leftIcon: AppIconButton(
+                  iconPath: 'assets/icons/ic_menu.svg',
+                  onPressed: () {},
+                ),
+                rightIcon: AppIconButton(
+                  iconPath: 'assets/icons/ic_scan.svg',
+                  onPressed: () {},
+                ),
+                title: 'Home',
+                titleColor: AppColors.defaultTextColor,
               ),
               Expanded(
                 child: ListView.separated(
@@ -41,6 +52,15 @@ class HomePage extends StatelessWidget {
                       height: 280,
                       child: WineRow(
                         item: wineItems[index],
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => DetailsPage(
+                                item: wineItems[index],
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     );
                   },
